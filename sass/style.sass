@@ -1,0 +1,80 @@
+$font: 'Raleway', sans-serif
+
+html, 
+body
+    height: 100%
+    margin: 0
+
+body
+    background-color: rgb(77, 98, 109)
+    color: #fff
+    font-family: $font
+    display: flex
+    flex-direction: column
+    align-items: center
+    justify-content: center
+
+h1
+    font-size: 50px
+    text-shadow: 1px 1px 3px #222
+    font-weight: 900
+    text-transform: capitalize
+
+.quote
+    font-size: 30px
+    font-weight: 700    
+
+.tweet,
+.trigger
+    border: 0
+    padding: 20px
+    display: block
+    margin: 10px
+    color: white
+    font-size: 18px
+    font-weight: 500
+.trigger
+    background: #25a24c
+    width: 250px
+.tweet
+    background: #55ACEE        
+    text-align: center
+    text-decoration: none
+
+$border-size : 4px
+
+.box 
+    width: 40% 
+    height: 250px 
+    background: rgb(77, 98, 109)
+    display: flex 
+    flex-direction: column 
+    align-items: center 
+    justify-content: center 
+    margin: 30px 
+    border: $border-size solid #fff 
+    //border-radius: 36px
+    position: relative
+    text-align: center 
+    padding: 40px 100px 
+    margin-bottom: 70px
+
+    &:after,
+    &:before
+        position: absolute
+        background: inherit
+        content: ''
+        z-index: 1
+    &:before
+        width: 450px
+        left: calc(50% - 225px)
+        height: calc(100% + 2*#{$border-size})
+        top: -#{$border-size}
+    &:after
+        height: 150px
+        width: calc(100% + 2*#{$border-size})
+        left: -#{$border-size}
+        top: calc(50% - 75px)
+    >*
+        position: 
+        z-index: 2    
