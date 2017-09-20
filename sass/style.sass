@@ -2,8 +2,9 @@ $font: 'Raleway', sans-serif
 
 html, 
 body
-    height: 100%
     margin: 0
+html 
+    height: 100%
 
 body
     background-color: rgb(77, 98, 109)
@@ -13,6 +14,7 @@ body
     flex-direction: column
     align-items: center
     justify-content: center
+    min-height: 100%
 
 h1
     font-size: 50px
@@ -39,25 +41,33 @@ h1
 .tweet
     background: #55ACEE        
     text-align: center
+a
     text-decoration: none
+    &:hover,
+    &:focus
+        color: inherit
+        text-decoration: none
+
 
 $border-size : 4px
 
 .box 
-    width: 40% 
-    height: 250px 
+    //width: 40% 
+    //height: 250px 
     background: rgb(77, 98, 109)
     display: flex 
     flex-direction: column 
     align-items: center 
     justify-content: center 
-    margin: 30px 
+
     border: $border-size solid #fff 
     //border-radius: 36px
     position: relative
     text-align: center 
-    padding: 40px 100px 
+    padding: 40px 10px 
     margin-bottom: 70px
+    margin-top: 70px
+    min-height: 350px
 
     &:after,
     &:before
@@ -66,15 +76,15 @@ $border-size : 4px
         content: ''
         z-index: 1
     &:before
-        width: 450px
-        left: calc(50% - 225px)
+        width: 50%
+        left: 25%
         height: calc(100% + 2*#{$border-size})
         top: -#{$border-size}
     &:after
-        height: 150px
+        height: 50%
         width: calc(100% + 2*#{$border-size})
         left: -#{$border-size}
-        top: calc(50% - 75px)
+        top: 25%
     >*
         position: 
         z-index: 2    

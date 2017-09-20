@@ -44,5 +44,11 @@ $(document).ready(function() {
     $('.trigger').on('click', function() {
         getQuote();
     });
+
+    $('.box').on('click', function() {
+        getQuote();
+    });
+
+    $('[data-toggle="tooltip"]').tooltip(); 
 });
 
