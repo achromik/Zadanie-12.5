@@ -20,7 +20,7 @@ function createTweet(input) {
     var data = input[0];
 
     var quoteText = $(data.content).text().trim();
-    var quoteAuthor = data.title;
+    var quoteAuthor = data.title.trim();
 
     if(!quoteAuthor.length) { 
         quoteAuthor = 'Unknown';
@@ -32,20 +32,30 @@ function createTweet(input) {
         getQuote();
     } else {
         var tweet = tweetLink + encodeURIComponent(tweetText);
+        
         $('.quote').text(quoteText);
         $('.author').text(quoteAuthor);
         $('.tweet').attr('href', tweet);
+        $('.quote').fadeIn();
+        $('.author').fadeIn();
+        
     }
 }
 
 
 $(document).ready(function() {
-    getQuote();
+        getQuote();
+        
     $('.trigger').on('click', function() {
+        $('.quote').fadeOut();
+        $('.author').fadeOut();
         getQuote();
     });
 
     $('.box').on('click', function() {
+        $('.quote').fadeOut();
+        $('.author').fadeOut();
+
         getQuote();
     });
 
