@@ -20,8 +20,9 @@ function createTweet(input) {
     var data = input[0];
 
     var quoteText = $(data.content).text().trim();
-    var quoteAuthor = data.title.trim();
+    var quoteAuthor = $('<p>').html(data.title).text(); //decode htm entites hack
 
+    
     if(!quoteAuthor.length) { 
         quoteAuthor = 'Unknown';
     }
@@ -36,25 +37,26 @@ function createTweet(input) {
         $('.quote').text(quoteText);
         $('.author').text(quoteAuthor);
         $('.tweet').attr('href', tweet);
-        $('.quote').fadeIn();
-        $('.author').fadeIn();
+        $('.wait').fadeOut();
+        $('.wrapper').delay(200).fadeIn();
         
     }
 }
 
 
 $(document).ready(function() {
-        getQuote();
         
+    getQuote();
+
     $('.trigger').on('click', function() {
-        $('.quote').fadeOut();
-        $('.author').fadeOut();
+        $('.wrapper').fadeOut();
+        $('.wait').delay(200).fadeIn();
         getQuote();
     });
 
     $('.box').on('click', function() {
-        $('.quote').fadeOut();
-        $('.author').fadeOut();
+        $('.wrapper').fadeOut();
+        $('.wait').delay(200).fadeIn();
 
         getQuote();
     });

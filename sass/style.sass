@@ -16,16 +16,26 @@ body
     justify-content: center
     min-height: 100%
 
+.flex
+    display: flex
+    flex-direction: column
+    align-items: center
+    justify-content: center    
+
 h1
     font-size: 50px
     text-shadow: 1px 1px 3px #222
     font-weight: 900
     text-transform: capitalize
+h2
+    font-size: 35px    
 
 .quote
     font-size: 30px
     font-weight: 700    
     transition: .5s
+.author
+    font-family: 'Courgette', cursive
 
 .tweet,
 .trigger
@@ -36,6 +46,7 @@ h1
     color: white
     font-size: 18px
     font-weight: 500
+    border-radius: 10px
 .trigger
     background: #25a24c
     width: 250px
@@ -89,3 +100,18 @@ $border-size : 4px
     >*
         position: 
         z-index: 2    
+
+.wait 
+    position: absolute
+    display:none
+.wait-info
+    margin-top: 10px    
+
+@media (max-width: 767px)
+    .container
+        width: 100%  
+    h1
+        font-size: 45px
+          
+    h2
+        font-size: 28px       
